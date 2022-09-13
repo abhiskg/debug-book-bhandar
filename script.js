@@ -93,10 +93,14 @@ const createCard = (book) => {
 
   let overview = book.overview;
 
+  if (overview.length > 90) {
+    overview = overview.slice(0, 90) + "...";
+  }
+
   div.innerHTML = `
   <div class="image-container">
     <img
-      src="${book.Image}"
+      src="${book.image}"
       alt=""
     />
     <div class="button-container">
